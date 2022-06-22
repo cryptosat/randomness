@@ -2,18 +2,19 @@ import { expect } from 'chai'
 import { Contract, ContractFactory } from 'ethers'
 import { ethers } from 'hardhat'
 
-let clientFactory: ContractFactory
+let signatureVerifierFactory: ContractFactory
 
 before(async function () {
-  clientFactory = await ethers.getContractFactory('ClientContract')
+  signatureVerifierFactory = await ethers.getContractFactory(
+    'SignatureVerifierMock',
+  )
 })
 
-describe('ClientContractTest', () => {
-  let client: Contract
+describe('SignatureVerifierTest', () => {
+  let signatureVerifier: Contract
 
   beforeEach(async function () {
-    const beaconAddr = ethers.utils.hexlify(ethers.utils.randomBytes(20))
-    client = await clientFactory.deploy(beaconAddr)
+    signatureVerifier = await signatureVerifierFactory.deploy()
   })
 
   describe('#splitSignature', () => {
@@ -25,7 +26,7 @@ describe('ClientContractTest', () => {
       const v = '0x1b'
       const signature = ethers.utils.concat([r, s, v])
 
-      const result = await client.splitSignature(signature)
+      const result = await signatureVerifier.splitSignature(signature)
       expect(result).to.eql([r, s, parseInt(v, 16)])
     })
   })
@@ -41,7 +42,7 @@ describe('ClientContractTest', () => {
       const v = '0x1b'
       const signature = ethers.utils.concat([r, s, v])
 
-      const result = await client.recoverSigner(digest, signature)
+      const result = await signatureVerifier.recoverSigner(digest, signature)
       expect(result).to.equal('0x0Ac1dF02185025F65202660F8167210A80dD5086')
     })
   })
@@ -64,7 +65,11 @@ describe('ClientContractTest', () => {
       const sig_buf = ethers.utils.joinSignature(signature)
       // '0x' + 65 byte string => 2 + 65 * 2 = 132
       expect(sig_buf.length).to.equal(132)
-      const result = await client.verify(signer_address, random, sig_buf)
+      const result = await signatureVerifier.verify(
+        signer_address,
+        random,
+        sig_buf,
+      )
 
       expect(result).to.equal(true)
     })

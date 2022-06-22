@@ -1,4 +1,5 @@
 import '@nomiclabs/hardhat-ethers'
+import '@nomiclabs/hardhat-truffle5'
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
