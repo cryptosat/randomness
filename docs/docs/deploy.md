@@ -9,9 +9,9 @@ randomness from Cryptosat Random Beacon contract.
 
 ## Create and deploy contract
 
-For this example, use [ClientContract.sol](https://remix.ethereum.org/#url=https://raw.githubusercontent.com/cryptosat/random-beacon/main/contracts/ClientContract.sol) sample contract
+For this example, use [ClientContract.sol](https://remix.ethereum.org/#url=https://raw.githubusercontent.com/cryptosat/randomness/main/contracts/ClientContract.sol) sample contract
 
-1. Open [`ClientContract.sol` in Remix](https://remix.ethereum.org/#url=https://raw.githubusercontent.com/cryptosat/random-beacon/main/contracts/ClientContract.sol)
+1. Open [`ClientContract.sol` in Remix](https://remix.ethereum.org/#url=https://raw.githubusercontent.com/cryptosat/randomness/main/contracts/ClientContract.sol)
 
 2. Compile the contract on the Compile tab.
 
