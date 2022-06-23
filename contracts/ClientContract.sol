@@ -1,13 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "./interfaces/RandomBeaconInterface.sol";
+import "./interfaces/SpaceRandomBeaconInterface.sol";
 
 contract ClientContract {
-  RandomBeaconInterface beacon;
+  SpaceRandomBeaconInterface beacon;
 
   constructor(address beaconAddr) {
-    beacon = RandomBeaconInterface(beaconAddr);
+    beacon = SpaceRandomBeaconInterface(beaconAddr);
   }
 
   function getRandom()

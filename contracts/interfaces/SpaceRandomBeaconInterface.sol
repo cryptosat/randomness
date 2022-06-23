@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-interface RandomBeaconInterface {
+interface SpaceRandomBeaconInterface {
   /**
    * @notice Request a random bytes32 value
    * @return signer - Address of the signer
