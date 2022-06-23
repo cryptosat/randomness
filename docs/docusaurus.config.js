@@ -58,9 +58,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'Cryptosat',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Cryptosat Logo',
           src: 'img/logo.svg',
         },
         items: [
