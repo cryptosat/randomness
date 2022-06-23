@@ -72,7 +72,7 @@ const config = {
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/cryptosat/random-beacon',
+            href: 'https://github.com/cryptosat/randomness',
             label: 'GitHub',
             position: 'right',
           },
