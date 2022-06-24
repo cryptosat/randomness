@@ -1,10 +1,14 @@
 import '@nomiclabs/hardhat-ethers'
 import '@nomiclabs/hardhat-truffle5'
+import 'hardhat-abi-exporter'
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
+  abiExporter: {
+    path: './abi',
+  },
   paths: {
     sources: './contracts',
     tests: './test',
