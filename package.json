@@ -21,7 +21,7 @@
     "/contracts/**/*.sol",
     "abi/contracts/**/*.json",
     "!/contracts/mocks/*",
-    "!abi/contracts/mocks/*"
+    "!abi/contracts/mocks/**/*"
   ],
   "directories": {
     "doc": "docs",
