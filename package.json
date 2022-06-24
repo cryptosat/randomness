@@ -16,6 +16,7 @@
   },
   "description": "Cryptosat space randomness beacon smart contract interfaces and utilties. ",
   "version": "0.0.1",
+  "private": false,
   "files": [
     "/contracts/**/*.sol",
     "abi/contracts/**/*.json",
