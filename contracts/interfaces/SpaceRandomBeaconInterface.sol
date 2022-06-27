@@ -11,7 +11,7 @@ interface SpaceRandomBeaconInterface {
    */
   function getRandom()
     external
-    view
+    payable
     returns (
       address signer,
       bytes32 random,
