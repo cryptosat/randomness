@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "./interfaces/SpaceRandomBeaconInterface.sol";
-import "./SignatureVerifier.sol";
+import "@cryptosat/randomness/contracts/interfaces/SpaceRandomBeaconInterface.sol";
+import "@cryptosat/randomness/contracts/SignatureVerifier.sol";
 
 contract ClientContract {
   SpaceRandomBeaconInterface beacon;
