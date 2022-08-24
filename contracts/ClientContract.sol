@@ -1,28 +1,38 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@cryptosat/randomness/contracts/interfaces/SpaceRandomBeaconInterface.sol";
-import "@cryptosat/randomness/contracts/SignatureVerifier.sol";
+import "./SpaceRandomBeaconConsumer.sol";
+import "./interfaces/SpaceRandomBeaconInterface.sol";
+import "./SignatureVerifier.sol";
 
-contract ClientContract {
-  SpaceRandomBeaconInterface beacon;
+contract ClientContract is SpaceRandomBeaconConsumer {
+  SpaceRandomBeaconInterface SpaceRandomBeacon;
 
-  constructor(address beaconAddr) {
-    beacon = SpaceRandomBeaconInterface(beaconAddr);
+  bytes public signature;
+  uint256 public random;
+  uint256 public requestId;
+  address owner;
+
+  constructor(address randomBeacon) SpaceRandomBeaconConsumer(randomBeacon) {
+    SpaceRandomBeacon = SpaceRandomBeaconInterface(randomBeacon);
+    owner = msg.sender;
   }
 
-  address public signer;
-  bytes32 public randomness;
-  bytes public signature;
-
-  function getRandom() external {
-    address _signer;
-    bytes32 _randomness;
-    bytes memory _signature;
-    (_signer, _randomness, _signature) = beacon.getRandom();
-    require(SignatureVerifier.verify(_signer, _randomness, _signature), "Invalid signature");
-    signer = _signer;
-    randomness = _randomness;
+  function fulfillRandomBeacon(
+    uint256 /* requestId */,
+    uint256 _random,
+    bytes memory _signature
+  ) internal override {
+    random = _random;
     signature = _signature;
+  }
+
+  function requestRandomWords() external {
+    require(msg.sender == owner, "Sender not equal to owner");
+    requestId = SpaceRandomBeacon.requestRandomBeacon();
+  }
+
+  function verify(address signer) public view returns (bool) {
+    return SignatureVerifier.verify(signer, bytes32(random), signature);
   }
 }

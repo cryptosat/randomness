@@ -19,7 +19,10 @@ For this example, use [ClientContract.sol](https://remix.ethereum.org/#url=https
 
 3. Deploy your contract with Random Beacon contract address
 
-   Select `Injected Web3` environment and fill in `0x1B23bcFc2Ec7b2259c90D4d96bc4aFAB75Da0ccF` for the Beacon Address
+   Select `Injected Web3` environment and fill in `0xFf94BaE6D7d2ccf61db5593Dc899E3c68464cDdb` for the Beacon Address
+
+   - Velas Testnet: 0xFf94BaE6D7d2ccf61db5593Dc899E3c68464cDdb
+   - Velas Mainnet: 0x8f5FE77380B83BaA7365ccc9956EB0594859F9E4
 
    ![Deploy](./img/deploy.png)
 
