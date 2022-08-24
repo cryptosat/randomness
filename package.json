@@ -16,7 +16,7 @@
     "web3": "^1.7.4"
   },
   "description": "Cryptosat space randomness beacon smart contract interfaces and utilties. ",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "private": false,
   "files": [
     "/contracts/**/*.sol",
