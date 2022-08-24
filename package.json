@@ -1,7 +1,7 @@
 {
   "name": "@cryptosat/randomness",
   "devDependencies": {
-    "@cryptosat/randomness": "^0.0.2",
+    "@cryptosat/randomness": "^0.1.0",
     "@nomiclabs/hardhat-ethers": "^2.0.6",
     "@nomiclabs/hardhat-truffle5": "^2.0.6",
     "@nomiclabs/hardhat-web3": "^2.0.0",
