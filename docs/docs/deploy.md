@@ -30,7 +30,6 @@ For this example, use [ClientContract.sol](https://remix.ethereum.org/#url=https
 
 4. After you deploy your contract, you can interact with it.
 
-   Click on getRandom button to retrieve randomness, then click 'randomness',
-   'signature', and 'signer' buttons to check the values.
+   Click on requestRandom button to request Space Random Beacon.
 
    ![getRandom](./img/getRandom.png)
