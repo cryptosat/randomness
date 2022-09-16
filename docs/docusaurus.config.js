@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Cryptosat Randomness Beacon',
-  tagline: 'on Velas Blockchain',
+  title: 'Cryptosat Random Beacon',
+  tagline: 'for Velas Blockchain',
   url: 'https://cryptosat.github.io/',
   baseUrl: '/randomness/',
   onBrokenLinks: 'throw',
